@@ -213,8 +213,17 @@ NetworkTables.addKeyListener('/SmartDashboard/Cargo:HasHatch', (key, value) => {
 // ========================================================================================
 // Spinner
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/')
+NetworkTables.addKeyListener('/SmartDashboard/Spinner:Rotations'), (key, value) => {
+	if (value >= 3 && value <=5) {
+		ui.spinnerRotations.style = "background-color:green;";
+	} else {
+		ui.spinnerRotations.style = "background-color:red;";
+	}
+}
 
+NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color'), (key, value) => {
+	
+}
 // ========================================================================================
 // misc 
 // ========================================================================================
