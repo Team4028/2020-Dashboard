@@ -250,6 +250,26 @@ Configure Settings for Specific HTML Objects
     font-size: 20px;
 }
 
+.spinner-rotations {
+	width: 95%;
+	height: 81px;
+	border-radius: 4px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 81px;
+	font-size: 50px;
+}
+
+.spinner-color {
+	width: 95%;
+	height: 81px;
+	background-color: blue;
+	border-radius: 4px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 81px;
+}
+
 /*Manage General Element Design*/
 #camera {
     padding: 0;

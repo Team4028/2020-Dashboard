@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>FRC 4028 Beak Squad Dashboard [version 2019.0]</title>
+    <title>FRC 4028 Beak Squad Dashboard [version 2020.0]</title>
     <!--=====================================================-->
     <!-- Verion: | Date: | Description:                      -->
     <!-- 2019.0  | 1/6/19| Initial Commit of Dashboard       -->
     <!-- 2019.1  |       | Visual Redesign of Dashboard      -->
+	<!-- 2020.0  |       | Redesign for Infinite Recharge    -->
     <!--=====================================================-->
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -122,12 +123,22 @@
 		<legend>Spinner:</legend>
 		<table>
 			<colgroup>
-				<col width="70px"/>
-				<col width="130px"/>
+				<col width="99px"/>
+				<col width="81px"/>
 			</colgroup>
 			<tr>
-				<td><svg height="255" width="170"><text id = "spinnerColor" x="90" y="100">3</text></svg></td>
+				<td align="center"><label class="std-label">Rotations </label></td>
+				<td align="center"><label class="std-label">Color</label></td>
 			</tr>
+			<tr>
+				<td align="center"><div class="spinner-rotations" id="spinnerRotations">##</div></td>
+				<td align="center" valign="center"><div class="spinner-color" id="spinnerColor"></div></td>
+			</tr>
+			<!--tr>
+				<td align="center"><label class="std-label">Distance </label></td>
+				<td align="center"><label class="std-label">Angle 1</label></td>
+				<td><svg height="255" width="170"><text id = "spinnerColor" x="90" y="100">3</text></svg></td>
+			</tr-->
 		</table>
 	</div>
 	
