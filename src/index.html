@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FRC 4028 Beak Squad Dashboard [version 2019.0]</title>
+    <!--=====================================================-->
+    <!-- Verion: | Date: | Description:                      -->
+    <!-- 2019.0  | 1/6/19| Initial Commit of Dashboard       -->
+    <!-- 2019.1  |       | Visual Redesign of Dashboard      -->
+    <!--=====================================================-->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id = "header" class = "box">
+		<table>
+			<colgroup>
+				<col width="230px">
+				<col width="230px">
+			</colgroup>
+			<tr align="center">
+				<!-- Tells whether robot is connected to dashboard. -->
+				<th style="width:230px" ><div id="robot-state">Unknown state</div></th>
+				<!--<th style="width:230px"><label class="std-label">FMS Debug Msg</label></th>-->
+				<!--<th style="width:230px"><label class="std-label">Scan Time (2 sec roll avg)</label></th>-->
+				<th style="width:100px"><label class="std-label">Robot Code Build:</label></th>
+			</tr>
+			<tr align="center">
+				<td><button class="login-button" id="reconnectBtn">Connect</button></td>
+				<!--<td><input type="text" id="fmsDebugMsg" value="unknown" readonly /></td>-->
+				<!--<td><input type="text" id="robotScanTime" value="unknown" readonly /></td>-->
+				<td><input type="text" id="robotCodeBuild" value="unknown" readonly /></td>
+			</tr>
+		</table>
+	</div>
+
+    <!-- You'll need to mess around with the CSS of #camera (found in css/style.css) to get it to work. -->
+	<img id="camera" src="#"/>
+	
+    <!-- The main body of the dashboard -->
+	<!-- Autonomous selector -->
+	<div class = "box" id = "auton-groupbox" flex="grow">
+		<table>
+			<colgroup> <!--Defining Dementions of Columns in Auton Selector Group Box-->
+				<col width="70px"/>
+				<col width="150px"/>
+			</colgroup>
+			<tr>
+				<td colspan="2" align = "left"> <label>Auton Chooser:</label></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><button id="openChooserWindowBtn" width="200px" disabled>No Autons Available</button></td>
+			</tr>
+			<tr>
+				<td align="center"><label class="std-label">Selected <br/> Auton </label></td>
+				<td align="center"><input class="auton-text-display" type="text" id="selectedAuton" value="unknown" readonly /></td>
+			</tr>
+			<tr>
+				<td align="center"><label class="std-label">Selected <br/> Side </label></td>
+				<td><input class="auton-text-display"type="text" id="selectedSide" value="unknown" readonly /></td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="autonChooserWindow" class="modal">
+		<button id="closeChooserWindowBtn">X</button>
+		<fieldset id="autonChooserBtnContainer" class="basic-auton-chooser-fieldset">
+			<legend>Select the Auton you want to run:</legend>
+		</fieldset>
+		<fieldset id="autonSideChooserBtnContainer" class="basic-auton-chooser-fieldset">
+			<legend>Select the Side that the Auton is Starting on:</legend>
+		</fieldset>
+	</div>
+	
+	<div class="box" id="chassis-groupbox">
+		<legend>Chassis:</legend>
+		<table>
+		</table>
+	</div>		
+	
+	<!--<div id="robot-diagram-div">-->
+		<!-- Robot diagram, arms moves when encoder values change -->
+		<!-- Elevator diagram, shows current position on elevator-->
+        <!--<svg id="robot-diagram" width="332" height="450">-->
+            <!-- Robot Diagram -->
+			<!--</svg>-->
+	<!--</div>-->
+	<!--<div id="vision-diagram-div">-->
+		<!--<svg id="vision-diagram">-->
+			<!--Trapezoid for Rocket-->
+			<!--<polygon points="210,1 225,27 255,27 270,1" style="fill:blue;stroke:white;stroke-width:5;fill-rule:nonzero;"/>-->
+			<!--Rectangle for Robot-->
+			<!--<rect id="robot" x="225" y="100" width="30" height="30" rx="3" ry="3" style="stroke:white;stroke-width:2;transform-origin: center center"/>-->
+		<!--</svg>-->
+	<!--</div>-->
+	
+	<div class="box" id="vision-groupbox">
+		<table>
+			<colgroup>
+				<col width="99px"/>
+				<col width="81px"/>
+				<col width="81px"/>
+			</colgroup>
+			<tr>
+				<td><legend>Vision Data:</legend></td>
+				<td align="center" colspan="2"><div align="center" id="visionTargetIndicator">Target</div></td>
+			</tr>
+			<tr>
+				<td align="center"><label class="std-label">Distance </label></td>
+				<td align="center"><label class="std-label">Angle 1</label></td>
+				<td align="center" valign="center" rowspan="2"><div class="vision-indicator" id="visionConnectionIndicator"><b>COMS</b></div></td>
+			</tr>
+			<tr>
+				<td align="center"><div class="vision-indicator" id="visionDistanceIndicator">##in</div></td>
+				<td align="center" valign="center"><div class="vision-indicator" id="visionAngle1Indicator">##&#176</div></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="box" id="elevator-groupbox">
+		<legend>Spinner:</legend>
+		<table>
+			<colgroup>
+				<col width="70px"/>
+				<col width="130px"/>
+			</colgroup>
+			<tr>
+				<td><svg height="255" width="170"><text id = "spinnerColor" x="90" y="100">3</text></svg></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="box" id="bucket-groupbox">
+		<legend>Bucket:</legend>
+		<table>
+			<tr>
+				<svg width="200" height="200">
+					<circle id="gamepiece" cx="130" cy="80" r="60"/>
+					<circle id="hatch-center" cx="130" cy="80" r="20"/>
+				</svg>
+			</tr>
+		</table>
+	</div>
+
+	<div class="box" id="climber-groupbox">
+		<legend>Climber:</legend>
+		<table>
+			<tr>
+				<td><div id = "climber-status">Climber is Running</div></td>
+			</tr>
+		</table>
+	</div>
+			
+    <div id="login">
+		<label>Connection <br/> Login:</label>
+		<button class="login-button" id="usbConnectBtn" disabled>==== USB Connect ==== <br/> [172.22.11.2]</button>
+		<button class="login-button" id="radioConnectBtn" disabled>==== Radio Connect ==== <br/> [10.40.28.2]</button>
+		<button class="login-button" id="developerScreenBtn" disabled>==== Open Developer ====<br/> Screen </button>
+	</div>
+
+	<!--<div id="developer-dashboard"></div>-->
+	
+    <script src="networktables/networktables.js"></script>
+    <script src="connection.js"></script>
+	<script src="ui.js"></script>
+	<script src="autonChooser.js"></script>
+	<script src="directives/barChart.js"></script>
+</body>
+
+</html>

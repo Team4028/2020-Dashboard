@@ -1,0 +1,464 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+    font: 16px sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+    overflow: hidden;
+    background:#21323A; /*rgb(47, 43, 66);*/
+}
+
+button, input[type="text"], input[type="number"], .select-container, select {
+    color: white;
+    background: #444;
+    border: none;
+    font-size: 12px;
+    padding: 4px 4px;
+    cursor: pointer;
+    outline: 0;
+}
+
+.title{
+    font-size: 2em;
+    text-align: left;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.select-container {
+    padding: 0;
+    display: inline-block;
+}
+select {
+    border: none;
+    background: none;
+    color: white;
+    height: 25px;
+}
+input[type="text"], input[type="number"] {
+    cursor: text;
+    text-align: center;
+}
+input[type="checkbox"] {
+    -webkit-filter: saturate(0);
+    filter: saturate(0);
+}
+/* Major interface panes, aside, article, header, etc. */
+body > * {
+    padding: 10px;
+    position: fixed;
+    overflow: scroll;
+    background: #21323A;
+}
+#timer {
+    font-family: monospace;
+    display: block;
+    height: 20vh;
+    width: 30vw;
+    top: 0;
+    left: 0;
+    font-size: 20vh;
+    line-height: .8;
+}
+
+.cameraChangerBtn {
+    padding: 0;
+    position: fixed;
+    background-color: #444;
+    border: solid 4px grey;
+}
+article {
+    top: 0;
+    left: 50vw;
+    height: 100vh;
+    width: 35vw;
+}
+svg * {
+    stroke: white;
+    fill: #222;
+    stroke-width: 2;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+}
+text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    stroke: none;
+    fill: white;
+}
+
+.auton-text-display {
+    overflow: hidden;
+    width: 130px;
+}
+
+aside {
+    right: 0;
+    top: 0;
+    width: 15vw;
+    height: 100vh;
+}
+aside > * {
+    margin-bottom: 20px;
+}
+#login {
+    position: fixed;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+body.login #login {
+    display: flex;
+}
+#login :disabled {
+    opacity: 0.6;
+}
+#login > * {
+    height: 40px;
+}
+#login > button {
+    margin-left: 5px;
+}
+
+/*My Screen Reference 
+63 x 0
+1440 x 1003 */
+/*==========================================================================================
+Configure Settings for Specific HTML Objects
+/*==========================================================================================*/
+#team {
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+
+#robot-state {
+    border-radius: 4px;
+}
+
+#visionTargetIndicator {
+    border-radius: 4px;
+    background-color: red;
+    height: grow;
+    width: grow;
+}
+
+.vision-indicator {
+    width: 95%;
+    height: 81px;
+    background-color: red;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 81px;
+}
+
+#robotCodeBuild {
+    width: 200px;	
+    overflow: auto;
+    height: 30px;
+}
+
+#visionConnectionIndicator {
+    height: 98px;
+    line-height: 98px;
+}
+
+/*Setup Auton Chooser */
+#openChooserWindowBtn {
+    width: 200px;
+    transition-duration: 0.4s;
+}
+
+#openChooserWindowBtn:hover {
+    background-color: #4CAF50;
+}
+
+#autonChooserBtnContainer {
+    width: 60%;
+    height: 50%;
+}
+
+#autonSideChooserBtnContainer {
+    width: 32%;
+    height: 22%;
+}
+
+#closeChooserWindowBtn {
+    position: relative;
+    top: 25px;
+    left: 1148px;
+    border-radius: 12px;
+    height: 30px;
+    width: 30px;
+    background-color: #444;
+    border: solid 2px white;
+    transition-duration: 0.4s;
+    font-weight: bold;
+}
+
+#closeChooserWindowBtn:hover {
+    background-color: red;
+}
+
+#gamepiece {
+    fill: darkorange;
+    stroke: orange;
+    stroke-width: 3px ; 
+}
+
+#hatch-center{
+    fill: #2B3A42;
+    stroke: darkgrey;
+    stroke-width: 3px;
+    visibility: hidden;
+}
+
+#elevatorPosition {
+    font-size: 130px;
+    font-weight: bold;
+}
+
+#climber-status {
+    top: 20px;
+    left: 10px;
+    width: 205px;
+    height: 70px;
+    background-color: darkolivegreen;
+    visibility: hidden;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 70px;
+    font-size: 20px;
+}
+
+/*Manage General Element Design*/
+#camera {
+    padding: 0;
+    position: fixed;
+    top: 5px;
+    left: 495px;
+	width: 940px;
+    height: 98.5%;
+    overflow: hidden;
+    background-color: #2B3A42; /*rgb(52, 47, 80);*/
+    background-size: contain;
+    border: solid 4px darkgrey;
+    /* Replace the url with a live-updating image feed from your camera. */
+    /*camera-address-USB: url('http://172.22.11.2:1180/stream.mjpg'); */
+    /*radio: url('http://10.40.28.2:1180/stream.mjpg');*/
+}
+
+/* Groupboxes */
+.box{
+    background-color: #2B3A42; /*rgb(52, 47, 80);*/
+    margin: 5px;
+    border-radius: 0px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#header {
+    height: 70px;
+}
+
+#auton-groupbox {
+    padding: 0;
+    position: fixed;
+    top: 75px;
+    left: 0px;
+    width: 220px;
+    height: 130px;
+  /*  display: block;
+    margin: 1.0em auto;*/
+    text-align: center;
+}
+
+#chassis-groupbox {
+    padding: 0;
+    position: fixed;
+    top: 210px;
+    left: 0px;
+    width: 220px;
+    height: 230px;
+}
+
+#vision-groupbox {
+    padding: 0;
+    position: fixed;
+    top: 75px;
+    left: 225px;
+    width: 261px;
+    height: 130px;
+}
+
+#climber-groupbox {
+    padding: 0;
+    position: fixed;
+    top: 445px;
+    left: 0px;
+    width:220px;
+    height: 115px;
+}
+
+#elevator-groupbox {
+    padding: 0;
+    position: fixed;
+    top: 210px;
+    left: 225px;
+    width: 261px;
+    height: 155px;
+}
+
+#bucket-groupbox {
+    padding: 0;
+    position: fixed;
+    top: 370px;
+    left: 225px;
+    width: 261px;
+    height: 190px;
+}
+
+#developer-dashboard {
+    opacity: 100%;
+}
+
+#vision-diagram-div {
+    padding: 0;
+    position: fixed;
+    top: 480px;
+    left: 10px;
+    width: 480px;
+    height: 250px;
+    background-color: #444;
+}
+
+#vision-diagram {
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    left: 1px;
+}
+
+/*
+#robot-diagram-div {
+    padding: 0;
+    position: fixed;
+    top: 370px;
+    left: 0px;
+    width: 300px;
+    height: 240px;	
+}
+
+#robot-diagram {
+    position: absolute;
+    bottom: 1px;
+    right: 1vw;
+}*/
+
+/*==========================================================================================
+Configure Settings for Classes of HTML Objects
+/*==========================================================================================*/
+.button-container {
+    width: 520px;
+    background: gray;
+    overflow-y: auto;
+}
+
+.login-button {
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+.login-button:hover {
+    background-color: orange;
+}
+
+.auton-button {
+    width: 100px;
+    height: 50px;
+    float: left;
+    background: #444;   
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    transition: color 0.4s, background-color 0.4s, transform 0.1s;
+    border-radius: 4px;
+    box-shadow: 0 9px #999;
+}
+
+.auton-button:hover,
+.auton-button:focus {
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+    color: purple;
+}
+
+.auton-button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    /*background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    /*border:solid 1px orange;*/
+}
+
+.basic-auton-chooser-fieldset {
+    position: relative;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid  #888;
+    /*border:solid 1px orange;
+    display: table;*/
+    clear: both;
+    z-index: -1;
+}
+
+.std-label {
+    color: white;
+    background: transparent;
+      border: none;
+    font-size: 12px;
+    padding: 4px 4px;
+    cursor: pointer;
+    outline: 0;
+}
