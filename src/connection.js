@@ -81,7 +81,7 @@ radioConnectBtn.onclick = () => {
   radioConnectBtn.textContent = 'Connecting...';
 };
 developerScreenBtn.onclick = () => {
-  //document.body.classList.toggle('developer-dashboard', true);
+  document.body.classList.toggle('developer-dashboard', true);
   document.body.classList.toggle('login', false);
 }
 

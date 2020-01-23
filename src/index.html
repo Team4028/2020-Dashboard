@@ -38,7 +38,7 @@
 	</div>
 	
     <!-- You'll need to mess around with the CSS of #camera (found in css/style.css) to get it to work. -->
-	<img id="camera" src="#"/>
+	<!--<img id="camera" src="#"/>-->
 	
 	<div id="camera"></div>
 	
@@ -78,26 +78,27 @@
 	</div>
 	
 	<div class="box" id="chassis-groupbox">
-		<legend>Chassis:</legend>
+		<legend>Powercell Count:</legend>
 		<table>
+			<p class="powercell-count">5</p>
 		</table>
 	</div>		
 	
 	<!--<div id="robot-diagram-div">-->
 		<!-- Robot diagram, arms moves when encoder values change -->
 		<!-- Elevator diagram, shows current position on elevator-->
-        <!--<svg id="robot-diagram" width="332" height="450">-->
-            <!-- Robot Diagram -->
-			<!--</svg>-->
-	<!--</div>-->
-	<!--<div id="vision-diagram-div">-->
-		<!--<svg id="vision-diagram">-->
-			<!--Trapezoid for Rocket-->
+         		<!-- Robot Diagram -->
+	<!--<svg id="robot-diagram" width="332" height="450">
+	</svg>
+	</div>
+	<div id="vision-diagram-div">
+		<svg id="vision-diagram">-->
+			<!-- Trapezoid for Rocket -->
 			<!--<polygon points="210,1 225,27 255,27 270,1" style="fill:blue;stroke:white;stroke-width:5;fill-rule:nonzero;"/>-->
-			<!--Rectangle for Robot-->
-			<!--<rect id="robot" x="225" y="100" width="30" height="30" rx="3" ry="3" style="stroke:white;stroke-width:2;transform-origin: center center"/>-->
-		<!--</svg>-->
-	<!--</div>-->
+			<!-- Rectangle for Robot -->
+			<!--<rect id="robot" x="225" y="100" width="30" height="30" rx="3" ry="3" style="stroke:white;stroke-width:2;transform-origin: center center"/>
+		</svg>
+	</div>-->
 	
 	<div class="box" id="vision-groupbox">
 		<table>
@@ -122,7 +123,7 @@
 		</table>
 	</div>
 	
-	<div class="box" id="elevator-groupbox">
+	<div class="box" id="spinner-groupbox">
 		<legend>Spinner:</legend>
 		<table>
 			<colgroup>
@@ -145,14 +146,11 @@
 		</table>
 	</div>
 	
-	<div class="box" id="bucket-groupbox">
-		<legend>Bucket:</legend>
+	<div class="box" id="infeed-groupbox">
+		<legend>Infeed:</legend>
 		<table>
 			<tr>
-				<svg width="200" height="200">
-					<circle id="gamepiece" cx="130" cy="80" r="60"/>
-					<circle id="hatch-center" cx="130" cy="80" r="20"/>
-				</svg>
+				
 			</tr>
 		</table>
 	</div>
@@ -162,6 +160,26 @@
 		<table>
 			<tr>
 				<td><div id = "climber-status">Climber is Running</div></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="box" id="shooter-groupbox">
+		<table>
+			<colgroup>
+				<col width="150px"/>
+				<col width="150px"/>
+			</colgroup>
+			<tr>
+				<td><legend>Shooter:</legend></td>
+			</tr>
+			<tr>
+				<td align="center"><label class="std-label">RPM </label></td>
+				<td align="center"><label class="std-label">Hood Position</label></td>
+			</tr>
+			<tr>
+				<td align="center"><div class="shooter-indicator" id="shooterRpm">##in</div></td>
+				<td align="center" valign="center"><div class="shooter-indicator" id="shooter">##&#176</div></td>
 			</tr>
 		</table>
 	</div>

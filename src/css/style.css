@@ -339,7 +339,7 @@ Configure Settings for Specific HTML Objects
     height: 115px;
 }
 
-#elevator-groupbox {
+#spinner-groupbox {
     padding: 0;
     position: fixed;
     top: 210px;
@@ -348,13 +348,22 @@ Configure Settings for Specific HTML Objects
     height: 155px;
 }
 
-#bucket-groupbox {
+#infeed-groupbox {
     padding: 0;
     position: fixed;
     top: 370px;
     left: 225px;
     width: 261px;
     height: 190px;
+}
+
+#shooter-groupbox {
+    padding: 0;
+    position: fixed;
+    top: 565px;
+    left: 0px;
+    width: 220px;
+    height: 130px;
 }
 
 #developer-dashboard {
@@ -377,6 +386,22 @@ Configure Settings for Specific HTML Objects
     bottom: 1px;
     right: 1px;
     left: 1px;
+}
+
+.powercell-count {
+	font-size: 160px;
+	text-align: center;
+	color: yellow;
+}
+
+.shooter-indicator {
+    width: 95%;
+    height: 81px;
+    background-color: mediumaquamarine;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 81px;
 }
 
 /*
