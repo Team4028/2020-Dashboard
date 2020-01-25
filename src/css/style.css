@@ -312,7 +312,7 @@ Configure Settings for Specific HTML Objects
     text-align: center;
 }
 
-#chassis-groupbox {
+#powercell-groupbox {
     padding: 0;
     position: fixed;
     top: 210px;

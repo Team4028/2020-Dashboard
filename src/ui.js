@@ -34,8 +34,11 @@ let ui = {
 	camera: document.getElementById('camera'),
 	
 	// spinner **To Be Editted**
-	spinnerColor: document.getElementById('spinnercolor'),
-	spinnerRotations: document.getElementById('spinnerrotations')
+	spinnerColor: document.getElementById('spinnerColor'),
+	spinnerRotations: document.getElementById('spinnerRotations'),
+	
+	// powercell count **To be Editted**
+	powerCellCount: document.getElementById('powerCellCount'),
 };
 
 
@@ -224,6 +227,17 @@ NetworkTables.addKeyListener('/SmartDashboard/Spinner:Rotations'), (key, value) 
 NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color'), (key, value) => {
 	
 }
+
+// ========================================================================================
+// Powercell Count
+// ========================================================================================
+NetworkTables.addKeyListener('/SmartDashboard/Powercell:Count'), (key, value)
+=> {
+	for (let pc = 0; pc <; pc++) {
+        powerCellCount(value[pc]);           
+    }
+}
+
 // ========================================================================================
 // misc 
 // ========================================================================================
