@@ -229,14 +229,21 @@ NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color'), (key, value) => {
 }
 
 // ========================================================================================
-// Powercell Count
+// Powercell Count  
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Powercell:Count'), (key, value)
-=> {
-	for (let pc = 0; pc <; pc++) {
-        powerCellCount(value[pc]);           
+NetworkTables.addKeyListener('/SmartDashboard/Powercell:Count'), (key, value) => {
+	for (let pc = 0; pc < PowerCellDetected; pc++) {
+        powerCellCount(value[pc]);          
     }
+	if (powerCellCount = 6) {
+		powerCellCount= 1;
+	}
 }
+
+// ========================================================================================
+// Infeed
+// ========================================================================================
+NetworkTables.addKeyListener('/SmartDashboard/Infeed:Position'), (key, value) =>
 
 // ========================================================================================
 // misc 
