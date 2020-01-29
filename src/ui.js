@@ -233,7 +233,7 @@ NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color'), (key, value) => {
 // ========================================================================================
 NetworkTables.addKeyListener('/SmartDashboard/Powercell:Count'), (key, value) => {
 	for (let pc = 0; pc < PowerCellDetected; pc++) {
-        powerCellCount(value[pc]);          
+        powerCellCount(value[pc]);
     }
 	if (powerCellCount = 6) {
 		powerCellCount= 1;
@@ -243,7 +243,9 @@ NetworkTables.addKeyListener('/SmartDashboard/Powercell:Count'), (key, value) =>
 // ========================================================================================
 // Infeed
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Infeed:Position'), (key, value) =>
+NetworkTables.addKeyListener('/SmartDashboard/Infeed:Position'), (key, value) => {
+	
+}
 
 // ========================================================================================
 // misc 
