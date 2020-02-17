@@ -403,7 +403,10 @@ Configure Settings for Specific HTML Objects
     vertical-align: middle;
     line-height: 81px;
 }
-
+#infeedPosition {
+    font-size: 130px;
+    font-weight: bold;
+}
 /*
 #robot-diagram-div {
     padding: 0;

@@ -39,6 +39,9 @@ let ui = {
 	
 	// powercell count **To be Editted**
 	powerCellCount: document.getElementById('powerCellCount'),
+	
+	// infeed position **To Be Editted**
+	infeedPosition: document.getElementById('infeedPosition'),
 };
 
 
@@ -231,20 +234,39 @@ NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color'), (key, value) => {
 // ========================================================================================
 // Powercell Count  
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Powercell:Count'), (key, value) => {
-	for (let pc = 0; pc < PowerCellDetected; pc++) {
-        powerCellCount(value[pc]);
-    }
-	if (powerCellCount = 6) {
-		powerCellCount= 1;
+NetworkTables.addKeyListener('/SmartDashboard/ButtonThings:Shooter Value'), (key, value) => {
+	
+	if (value > 5) {
+		pc = 0;
 	}
+	
+		//	let pc = valueOf(powerCellCount);
+	
+//	for (let pc = 0; pc < PowerCellDetected; pc++)
+//	for (let pc = 0; pc++) {
+//        powerCellCount(value[pc]);  
+//    }
+//	if (powerCellCount = 6) {
+//		powerCellCount= 1;
+//	}
 }
 
 // ========================================================================================
 // Infeed
 // ========================================================================================
 NetworkTables.addKeyListener('/SmartDashboard/Infeed:Position'), (key, value) => {
-	
+	 if (value == "IN"){
+		ui.elevatorPosition.style.fill = "green";
+		ui.elevatorPosition.textContent = "In";
+	}
+	else if (value == "OUT"){
+		ui.elevatorPosition.style.fill = "yellow";
+		ui.elevatorPosition.textContent = "Out";
+	}
+	else {
+		ui.elevatorPosition.style.fill = "cornsilk";
+		ui.elevatorPosition.textContent = "F";
+	}
 }
 
 // ========================================================================================
