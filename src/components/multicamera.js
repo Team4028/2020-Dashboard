@@ -3,11 +3,8 @@ ui.camera = {
 	viewer: document.getElementById('camera'),
 	id: 0,
 	srcs: [ // Will default to first camera
-        'INSERT FIRST CAMERA STREAM SOURCE',
-        'INSERT SECOND CAMERA STREAM SOURCE',
-        'INSERT THIRD CAMERA STREAM SOURCE',
-        'INSERT FOURTH CAMERA STREAM SOURCE',
-        'ETC'
+        '10.40.28.13:5800',
+        '10.40.28.15:5801',
     ]
 };
 
