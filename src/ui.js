@@ -251,7 +251,7 @@ NetworkTables.addKeyListener('/SmartDashboard/PowerCell:Count', (key, value) => 
 // ========================================================================================
 // Infeed
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Infeed:Position'), (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Singulator:Sensor'), (key, value) => {
 	 if (value == "IN"){
 		ui.elevatorPosition.style.fill = "green";
 		ui.elevatorPosition.textContent = "In";
