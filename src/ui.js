@@ -40,7 +40,7 @@ let ui = {
 	// powercell count **To be Editted**
 	powerCellCount: document.getElementById('powerCellCount'),
 	
-	// infeed position **To Be Editted**
+	// infeed position **To Be Editted**F
 	infeedPosition: document.getElementById('infeedPosition'),
 };
 
@@ -234,11 +234,9 @@ NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color'), (key, value) => {
 // ========================================================================================
 // Powercell Count  
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/ButtonThings:Shooter Value'), (key, value) => {
-	
-	if (value > 5) {
-		pc = 0;
-	}
+NetworkTables.addKeyListener('/SmartDashboard/PowerCell:Count', (key, value) => {
+	ui.powerCellCount.textContent = value;
+	});
 	
 		//	let pc = valueOf(powerCellCount);
 	
@@ -249,7 +247,6 @@ NetworkTables.addKeyListener('/SmartDashboard/ButtonThings:Shooter Value'), (key
 //	if (powerCellCount = 6) {
 //		powerCellCount= 1;
 //	}
-}
 
 // ========================================================================================
 // Infeed
