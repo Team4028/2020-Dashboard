@@ -217,22 +217,22 @@ NetworkTables.addKeyListener('/SmartDashboard/Cargo:HasHatch', (key, value) => {
 });
 
 // ========================================================================================
-// Spinner
+// SPINNER
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Spinner:Rotations'), (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Spinner:Rotations', (key, value) => {
 	if (value >= 3 && value <= 5) {
 		ui.spinnerRotations.style = "background-color:green;";
 	} else {
 		ui.spinnerRotations.style = "background-color:red;";
 	}
-}
+});
 
-NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color'), (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color', (key, value) => {
 	
-}
+});
 
 // ========================================================================================
-// Powercell Count  
+// POWERCELL COUNT 
 // ========================================================================================
 NetworkTables.addKeyListener('/SmartDashboard/PowerCell:Count', (key, value) => {
 	ui.powerCellCount.textContent = value;
@@ -249,22 +249,35 @@ NetworkTables.addKeyListener('/SmartDashboard/PowerCell:Count', (key, value) => 
 //	}
 
 // ========================================================================================
-// Infeed
+// INFEED
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Singulator:Sensor'), (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Singulator:Sensor', (key, value) => {
 	 if (value == "IN"){
 		ui.elevatorPosition.style.fill = "green";
 		ui.elevatorPosition.textContent = "In";
-	}
-	else if (value == "OUT"){
+	} else if (value == "OUT"){
 		ui.elevatorPosition.style.fill = "yellow";
 		ui.elevatorPosition.textContent = "Out";
-	}
-	else {
+	} else {
 		ui.elevatorPosition.style.fill = "cornsilk";
 		ui.elevatorPosition.textContent = "F";
 	}
-}
+});
+
+// ========================================================================================
+// CAMERA
+// ========================================================================================
+/*NetworkTables.addKeyListener('SmartDashboard/Camera Case', (key, value) => {
+	if (value == "LIMELIGHT") {
+		ui.camera.style = "background-image: url('http://10.40.28.13:5800/stream.mjpg');";
+	} else if (value == "INFEED") {
+		ui.camera.style = "background-image: url('http://10.40.28.15:5801/stream.mjpg');";
+	} else if (value == "EXTRA") {
+		ui.camera.style = "background-image: url('http://10.40.28.15:5801/stream.mjpg');";
+	} else {
+		ui.camera.style.fill = "cornsilk";
+	}
+});*/
 
 // ========================================================================================
 // misc 
