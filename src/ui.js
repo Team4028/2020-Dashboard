@@ -265,21 +265,6 @@ NetworkTables.addKeyListener('/SmartDashboard/Singulator:Sensor', (key, value) =
 });
 
 // ========================================================================================
-// CAMERA
-// ========================================================================================
-/*NetworkTables.addKeyListener('SmartDashboard/Camera Case', (key, value) => {
-	if (value == "0") {
-		ui.camera.style = "background-image: url('http://10.40.28.13:5800/stream.mjpg');";
-	} else if (value == "1") {
-		ui.camera.style = "background-image: url('http://10.40.28.15:5801/stream.mjpg');";
-	} /*else if (value == "") {
-		ui.camera.style = "background-image: url('http://10.40.28.15:5801/stream.mjpg');";
-	}*/ /*else {
-		ui.camera.style.fill = "cornsilk";
-	}
-});*/
-
-// ========================================================================================
 // misc 
 // ========================================================================================
 NetworkTables.addKeyListener('/SmartDashboard/CamSelection', (key, value) => {	
@@ -288,4 +273,4 @@ NetworkTables.addKeyListener('/SmartDashboard/CamSelection', (key, value) => {
 
 addEventListener('error',(ev)=>{
     ipc.send('windowError',{mesg:ev.message,file:ev.filename,lineNumber:ev.lineno})
-})
+});

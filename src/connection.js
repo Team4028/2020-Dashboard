@@ -68,7 +68,7 @@ usbConnectBtn.onclick = () => {
   ipc.send('connect', '172.22.11.2');
   address = "172.22.11.2";
   usbConnectBtn.disabled = true;
-  camera.setAttribute('src', 'http://172.22.11.2:1180/stream.mjpg');
+  camera.setAttribute('src', 'http://172.22.11.15:1181/stream.mjpg');
   usbConnectBtn.textContent = 'Connecting...';
 };
 radioConnectBtn.onclick = () => {
@@ -76,7 +76,7 @@ radioConnectBtn.onclick = () => {
   address = "10.40.28.2";
   radioConnectBtn.disabled = true;
   //camera.setAttribute('src', 'http://10.40.28.13:5800/'); //Limelight
-  //camera.setAttribute('src', 'http://10.40.28.15:1181/stream.mjpg'); //Camera #1 w/ Rasberry PI
+  camera.setAttribute('src', 'http://10.40.28.15:1181/stream.mjpg'); //Camera #1 w/ Rasberry PI
   //camera.setAttribute('src', 'http://10.40.28.15:5801/stream.mjpg'); //Camera #2 w/ Rasberry PI
   radioConnectBtn.textContent = 'Connecting...';
   //camera.setAttribute('src', 'http://10.40.28.11:5800/'); //Limelight
