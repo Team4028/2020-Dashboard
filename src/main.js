@@ -102,11 +102,11 @@ function createWindow() {
     console.log(mainScreenDimentions.width + " x " + mainScreenDimentions.height);
     mainWindow = new BrowserWindow({
         width: mainScreenDimentions.width, //1530, //1366,
-        height: mainScreenDimentions.height - 248,
+        height: mainScreenDimentions.height - 190,
         maxWidth: mainScreenDimentions.width,
         minWidth: mainScreenDimentions.width,
-        maxHeight: mainScreenDimentions.height - 252,
-        minHeight: mainScreenDimentions.height - 252,
+        maxHeight: mainScreenDimentions.height - 190,
+        minHeight: mainScreenDimentions.height - 190,
         x: dimentions.x - 1,
         y: dimentions.y,
         useContentSize: true,

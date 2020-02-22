@@ -276,13 +276,13 @@ Configure Settings for Specific HTML Objects
     position: fixed;
     top: 5px;
     left: 495px;
-	width: 940px;
-    height: 98.5%;
+	width: 800px;
+    height: 600px;
     overflow: hidden;
     background-color: #2B3A42; /*rgb(52, 47, 80);*/
     background-size: contain;
     border: solid 4px darkgrey;
-	background-image: url('http://10.40.28.13:5800/stream.mjpg');
+	background-image: url('http://10.40.28.15:1181/stream.mjpg');
     /* Replace the url with a live-updating image feed from your camera. */
     /*camera-address-USB: url('http://172.22.11.2:1180/stream.mjpg'); */
     /*radio: url('http://10.40.28.2:1180/stream.mjpg');*/
