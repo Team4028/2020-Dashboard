@@ -282,7 +282,7 @@ NetworkTables.addKeyListener('/SmartDashboard/Singulator:Sensor', (key, value) =
 // ========================================================================================
 // misc 
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/CurrentCameraAddress', (key, value) => {	
+NetworkTables.addKeyListener('/SmartDashboard/CamSelection', (key, value) => {	
 	camera.setAttribute('src', value);
 });
 

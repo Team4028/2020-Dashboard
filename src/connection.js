@@ -76,9 +76,9 @@ radioConnectBtn.onclick = () => {
   address = "10.40.28.2";
   radioConnectBtn.disabled = true;
   //camera.setAttribute('src', 'http://10.40.28.13:5800/'); //Limelight
-  camera.setAttribute('src', 'http://10.40.28.15:5801/stream.mjpg'); //Camera #1 w/ Rasberry PI
+  camera.setAttribute('src', 'http://10.40.28.15:1181/stream.mjpg'); //Camera #1 w/ Rasberry PI
   //camera.setAttribute('src', 'http://10.40.28.15:5801/stream.mjpg'); //Camera #2 w/ Rasberry PI
-  radioConnectBtn.textContent = 'Connecting...';
+  radioConnectBtn.textContent = 'Connecting
 };
 developerScreenBtn.onclick = () => {
   document.body.classList.toggle('developer-dashboard', true);
@@ -92,7 +92,7 @@ setLogin();
 // Set Up grabbing Camera Frames
 usbRequest.open("GET", 'http://10.40.28.13:5800/stream.mjpg', true); // true for asynchronous 
 //radioRequest.open("GET", 'http://10.40.28.2:1180/stream.mjpg', true); // true for asynchronous 
-radioRequest.open("GET", 'http://10.40.28.15:5801/stream.mjpg', false); // true for asynchronous 
+radioRequest.open("GET", 'http://10.40.28.15:1181/stream.mjpg', false); // true for asynchronous 
 usbRequest.send();
 usbRequest.send();
 radioRequest.send();
