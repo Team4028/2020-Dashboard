@@ -1,5 +1,5 @@
 // Set a global alias for the camera and related elements.
-ui.camera = {
+/*ui.camera = {
 	viewer: document.getElementById('camera'),
 	id: 0,
 	srcs: [ // Will default to first camera
@@ -16,3 +16,4 @@ ui.camera.viewer.onclick = function() {
 	if (ui.camera.id === ui.camera.srcs.length) ui.camera.id = 0;
 	ui.camera.viewer.style.backgroundImage = 'url(' + ui.camera.srcs[ui.camera.id] + ')';
 };
+*/

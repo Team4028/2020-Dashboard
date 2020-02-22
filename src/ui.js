@@ -267,17 +267,17 @@ NetworkTables.addKeyListener('/SmartDashboard/Singulator:Sensor', (key, value) =
 // ========================================================================================
 // CAMERA
 // ========================================================================================
-/*NetworkTables.addKeyListener('SmartDashboard/Camera Case', (key, value) => {
-	if (value == "LIMELIGHT") {
+NetworkTables.addKeyListener('SmartDashboard/Camera Case', (key, value) => {
+	if (value == "0") {
 		ui.camera.style = "background-image: url('http://10.40.28.13:5800/stream.mjpg');";
-	} else if (value == "INFEED") {
+	} else if (value == "1") {
 		ui.camera.style = "background-image: url('http://10.40.28.15:5801/stream.mjpg');";
-	} else if (value == "EXTRA") {
+	} /*else if (value == "") {
 		ui.camera.style = "background-image: url('http://10.40.28.15:5801/stream.mjpg');";
-	} else {
+	}*/ else {
 		ui.camera.style.fill = "cornsilk";
 	}
-});*/
+});
 
 // ========================================================================================
 // misc 
