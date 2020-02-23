@@ -61,10 +61,7 @@
 				<td align="center"><label class="std-label">Selected <br/> Auton </label></td>
 				<td align="center"><input class="auton-text-display" type="text" id="selectedAuton" value="unknown" readonly /></td>
 			</tr>
-			<tr>
-				<td align="center"><label class="std-label">Selected <br/> Side </label></td>
-				<td><input class="auton-text-display"type="text" id="selectedSide" value="unknown" readonly /></td>
-			</tr>
+			
 		</table>
 	</div>
 
@@ -72,9 +69,6 @@
 		<button id="closeChooserWindowBtn">X</button>
 		<fieldset id="autonChooserBtnContainer" class="basic-auton-chooser-fieldset">
 			<legend>Select the Auton you want to run:</legend>
-		</fieldset>
-		<fieldset id="autonSideChooserBtnContainer" class="basic-auton-chooser-fieldset">
-			<legend>Select the Side that the Auton is Starting on:</legend>
 		</fieldset>
 	</div>
 	
@@ -147,15 +141,27 @@
 		</table>
 	</div>
 	
-	<div class="box" id="infeed-groupbox">
-		<legend>Infeed:</legend>
+
+	<div class="box" id="shooter-groupbox">
+		<legend></legend>
 		<table>
+			<colgroup>
+				<col width="150px"/>
+				<col width="150px"/>
+			</colgroup>
 			<tr>
-				<td align="center"><div class="infeed-position" id="infeedPosition">##</div></td>
+				<td><legend></legend></td>
+			</tr>
+			<tr>
+				<td align="center"><label class="std-label">Is Alt Shot</label></td>
+				<td align="center"><label class="std-label">Is At Speed</label></td>
+			</tr>
+			<tr>
+				<td align="center"><div class="shooter-indicator" id="Is Alt Shot"></div></td>
+				<td align="center"><div class="shooter-indicator" id="Is At Speed"></div></td>
 			</tr>
 		</table>
 	</div>
-
 	<div class="box" id="climber-groupbox">
 		<legend>Climber:</legend>
 		<table>
@@ -168,19 +174,22 @@
 	<div class="box" id="spinner-groupbox">
 		<table>
 			<colgroup>
-				<col width="150px"/>
-				<col width="150px"/>
+				<col width="100px"/>
+				<col width="100px"/>
+				<col width="100px"/>
 			</colgroup>
 			<tr>
 				<td><legend>Shooter:</legend></td>
 			</tr>
 			<tr>
-				<td align="center"><label class="std-label">RPM</label></td>
-				<td align="center"><label class="std-label">Hood Position</label></td>
+				<td align="center"><label class="std-label">Shot Distance</label></td>
+				<td align="center"><label class="std-label">Shooter Offset</label></td>
+				<td align="center"><label class="std-label">Shooter Sensor Distance</label>
 			</tr>
 			<tr>
-				<td align="center"><div class="shooter-indicator" id="shooterRpm">##in</div></td>
-				<td align="center" valign="center"><div class="shooter-indicator" id="shooter">##&#176</div></td>
+				<td align="center"><div class="shooter-indicator" id="shotDistance">##in</div></td>
+				<td align="center"><div class="shooter-indicator" id="shotOffset">##in</div></td>
+				<td align="center"><div class="shooter-indicator" id="sensorDist">bfhbfk</div></td>
 			</tr>
 		</table>
 	</div>

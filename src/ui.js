@@ -42,6 +42,17 @@ let ui = {
 	
 	// infeed position **To Be Editted**F
 	infeedPosition: document.getElementById('infeedPosition'),
+
+	isAltShot : document.getElementById('Is Alt Shot'),
+
+	isReadyToShoot : document.getElementById('Is At Speed'),
+
+	shooterOffset : document.getElementById('shotOffset'),
+
+	shooterDist : document.getElementById('shotDistance'),
+
+	shooterSensorDistance : document.getElementById('sensorDist')
+
 };
 
 
@@ -113,10 +124,6 @@ NetworkTables.addKeyListener('/SmartDashboard/Side Start/default', (key, value) 
 	selectedSide.value = value;
 });
 
-NetworkTables.addKeyListener('/SmartDashboard/Side Start/selected', (key, value) => {
-	setSideDefault(value.toString());
-	selectedSide.value = value;
-});
 
 // ========================================================================================
 // Vision
@@ -172,7 +179,7 @@ NetworkTables.addKeyListener('/SmartDashboard/Vision:IsPingable', (key, value) =
 // ========================================================================================
 // Climber
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Climber:IsRunning', (key, value) => {	
+NetworkTables.addKeyListener('/SmartDashboard/ClimberIsRunning', (key, value) => {	
 	if(value){
 		ui.climberStatus.style.visibility = visible;
 	} else {
@@ -234,7 +241,7 @@ NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color', (key, value) => {
 // ========================================================================================
 // POWERCELL COUNT 
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/PowerCell:Count', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Cell Count', (key, value) => {
 	ui.powerCellCount.textContent = value;
 	});
 	
@@ -263,6 +270,50 @@ NetworkTables.addKeyListener('/SmartDashboard/Singulator:Sensor', (key, value) =
 		ui.elevatorPosition.textContent = "F";
 	}
 });
+
+// ========================================================================================
+// Shooter
+// ========================================================================================
+
+NetworkTables.addKeyListener('/SmartDashboard/Is At Speed', (key, value) =>
+{
+	if( value == true)
+	{
+		ui.isReadyToShoot.style = "background-color:green;";
+
+		ui.isReadyToShoot.textContent = "Shoot";
+	}
+	else{
+		ui.isReadyToShoot.style = "background-color:red;";
+		ui.isReadyToShoot.textContent = "NOT READY";
+	}
+});
+NetworkTables.addKeyListener('/SmartDashboard/Shooter Distance', (key, value) =>
+{
+	ui.shooterDist.textContent = value;
+});
+NetworkTables.addKeyListener('/SmartDashboard/Shooter Offset', (key, value) =>
+{
+	ui.shooterOffset.textContent = value;
+});
+NetworkTables.addKeyListener('/SmartDashboard/Shooter Sensor Distance', (key, value) =>
+{
+	ui.shooterSensorDistance.textContent = value;
+});
+NetworkTables.addKeyListener('/SmartDashboard/Is Alternate Shot', (key, value) =>
+{
+	if( value == true)
+	{
+		ui.isAltShot.style = "background-color:red;";
+		ui.isAltShot.textContent = "Alternate";
+	}
+	else{
+		ui.isAltShot.style = "background-color:green";
+		ui.isAltShot.textContent = "Normal";
+	}
+});
+
+
 
 // ========================================================================================
 // misc 

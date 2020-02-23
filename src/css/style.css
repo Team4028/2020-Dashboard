@@ -196,10 +196,7 @@ Configure Settings for Specific HTML Objects
     height: 50%;
 }
 
-#autonSideChooserBtnContainer {
-    width: 32%;
-    height: 22%;
-}
+
 
 #closeChooserWindowBtn {
     position: relative;
@@ -331,6 +328,7 @@ Configure Settings for Specific HTML Objects
 }
 
 #climber-groupbox {
+    
     padding: 0;
     position: fixed;
     top: 445px;
@@ -339,31 +337,35 @@ Configure Settings for Specific HTML Objects
     height: 115px;
 }
 
+
 #spinner-groupbox {
     padding: 0;
     position: fixed;
     top: 210px;
     left: 225px;
     width: 261px;
-    height: 155px;
+    height: 160px;
 }
 
 #infeed-groupbox {
-    padding: 0;
-    position: fixed;
-    top: 370px;
-    left: 225px;
-    width: 261px;
-    height: 190px;
-}
-
-#shooter-groupbox {
+   
+    height: 115px;
     padding: 0;
     position: fixed;
     top: 565px;
     left: 0px;
     width: 220px;
     height: 130px;
+}
+
+#shooter-groupbox {
+
+    padding: 0;
+    position: fixed;
+    top: 375px;
+    left: 225px;
+    width: 261px;
+    height: 160px;
 }
 
 #developer-dashboard {
@@ -394,16 +396,23 @@ Configure Settings for Specific HTML Objects
 	color: yellow;
 }
 
+.shot-distance{
+    font-size: 25px;
+    text-align: center;
+    color: cornsilk;
+    
+}
+
 .shooter-indicator {
     width: 95%;
     height: 81px;
-    background-color: mediumaquamarine;
+    background-color: indigo;
     border-radius: 4px;
     text-align: center;
     vertical-align: middle;
     line-height: 81px;
 }
-#infeedPosition {
+#climber-status {
     font-size: 130px;
     font-weight: bold;
 }
