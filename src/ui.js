@@ -209,21 +209,6 @@ NetworkTables.addKeyListener('/SmartDashboard/Elevator: Position', (key, value) 
 });
 
 // ========================================================================================
-// Bucket Group Box
-// ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Cargo:HasHatch', (key, value) => {	
-	if (value) {
-		ui.gamepiece.style.fill = "yellow";
-		ui.gamepiece.style.stroke = "darkgrey";
-		ui.hatchcenter.style.visibility = "visible";
-	} else {
-		ui.gamepiece.style.fill = "darkorange";
-		ui.gamepiece.style.stroke = "orange";
-		ui.hatchcenter.style.visibility = "hidden";
-	}
-});
-
-// ========================================================================================
 // SPINNER
 // ========================================================================================
 NetworkTables.addKeyListener('/SmartDashboard/Spinner:Rotations', (key, value) => {
